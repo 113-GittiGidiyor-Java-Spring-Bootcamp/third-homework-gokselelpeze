@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188ec95f-2362-4fa9-8b0a-5d244bc4cc83" name="Changes" comment="project initialized" />
+    <list default="true" id="188ec95f-2362-4fa9-8b0a-5d244bc4cc83" name="Changes" comment="project initialized">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/InstructorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/BaseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/CourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/InstructorDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/StudentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Instructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/PermanentInstructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/VisitingResearcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/InstructorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,16 +36,21 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Structure" value="true" />
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
   <component name="ProjectId" id="1xMUzFMcKfawAR7llpqqm5k5Mr3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,6 +62,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db" />
+      <recent name="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="H2dbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -56,7 +88,9 @@
       <option name="presentableId" value="Default" />
       <updated>1630164712420</updated>
       <workItem from="1630164715346" duration="18000" />
-      <workItem from="1630176082148" duration="1814000" />
+      <workItem from="1630176082148" duration="1865000" />
+      <workItem from="1630223488698" duration="919000" />
+      <workItem from="1630248682132" duration="888000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1630178399946</created>
@@ -65,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630178399946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="project initialized">
+      <created>1630178723026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630178723026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +122,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project initialized" />
