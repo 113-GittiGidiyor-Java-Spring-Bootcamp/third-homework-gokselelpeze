@@ -48,8 +48,9 @@ public class StudentService implements BaseService<Student> {
         return repository.save(student);
     }
 
-    public int getNumberOfStudents() {
-        return repository.getNumberOfStudents();
+    @Transactional
+    public List<Student> findStudentsGendersAndCounts() {
+        return repository.countStudentsByGender();
     }
 
 }

@@ -35,6 +35,11 @@ public class StudentController {
         return new ResponseEntity<>(studentService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/students/genders")
+    public ResponseEntity<Student> findGenders() {
+        return new ResponseEntity<>((Student) studentService.findStudentsGendersAndCounts(), HttpStatus.OK);
+    }
+
     @PutMapping("/students")
     public Student updateStudent(@RequestBody Student students) {
         return studentService.update(students);
