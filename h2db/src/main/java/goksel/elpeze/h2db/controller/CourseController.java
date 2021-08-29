@@ -1,49 +1,56 @@
 package goksel.elpeze.h2db.controller;
 
 import goksel.elpeze.h2db.entity.Course;
-import goksel.elpeze.h2db.services.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import goksel.elpeze.h2db.repository.CourseRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
-@RestController
-@RequestMapping("/api")
+
+@Controller
+@RequiredArgsConstructor
 public class CourseController {
 
-    CourseService courseService;
+    private final CourseRepository repository;
 
-    @Autowired
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
+
+    @PostMapping("/addcourse")
+    public String addUser(@Valid Course course, BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "addcourse";
+        }
+
+        repository.save(course);
+        return "redirect:/addcourse";
     }
 
-    @GetMapping("/courses")
-    public ResponseEntity<List<Course>> findAll() {
-        return new ResponseEntity<>(courseService.findAll(), HttpStatus.OK);
+    @GetMapping("/editcourse/{id}")
+    public String showUpdatePage(@PathVariable int id, Model theModel){
+        Course course = repository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid course id: " + id));
+        theModel.addAttribute("course",course);
+        return "updatecourse";
     }
 
-    @PostMapping("/courses")
-    public Course saveCourse(@RequestBody Course courses) {
-        return courseService.save(courses);
+    @PostMapping("/updatecourse/{id}")
+    public String updateCourse(@PathVariable int id, @Valid Course course,  BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "updatecourse";
+        }
+
+        repository.save(course);
+        return "redirect:/addcourse";
     }
 
-    @GetMapping("/courses/{id}")
-    public ResponseEntity<Course> findCourseById(@PathVariable int id) {
-        return new ResponseEntity<>(courseService.findById(id), HttpStatus.OK);
-    }
+    @GetMapping("/deletecourse/{id}")
+    public String deleteCourse(@PathVariable int id){
+        Course course = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid course : " + id));
+        repository.delete(course);
 
-    @PutMapping("/courses")
-    public Course updateCourse(@RequestBody Course courses) {
-        return courseService.update(courses);
-    }
-
-    @DeleteMapping("/courses/{id}")
-    public String deleteCourseById(@PathVariable int id) {
-        courseService.deleteById(id);
-        return "Course Deleted";
+        return "redirect:/addcourse";
     }
 
 }

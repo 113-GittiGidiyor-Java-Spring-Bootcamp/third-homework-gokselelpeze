@@ -1,49 +1,57 @@
 package goksel.elpeze.h2db.controller;
 
 import goksel.elpeze.h2db.entity.Student;
-import goksel.elpeze.h2db.services.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import goksel.elpeze.h2db.repository.StudentRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
-@RestController
-@RequestMapping("/api")
+
+@Controller
+@RequiredArgsConstructor
 public class StudentController {
 
-    StudentService studentService;
+    private final StudentRepository repository;
 
-    @Autowired
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+
+
+    @PostMapping("/addstudent")
+    public String addStudent(@Valid Student student, BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "addstudent";
+        }
+
+        repository.save(student);
+        return "redirect:/addstudent";
     }
 
-    @GetMapping("/students")
-    public ResponseEntity<List<Student>> findAll() {
-        return new ResponseEntity<>(studentService.findAll(), HttpStatus.OK);
+    @GetMapping("/editstudent/{id}")
+    public String showUpdatePage(@PathVariable int id, Model theModel){
+        Student student = repository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid student id: " + id));
+        theModel.addAttribute("student",student);
+        return "updatestudent";
     }
 
-    @PostMapping("/students")
-    public Student saveStudent(@RequestBody Student student) {
-        return studentService.save(student);
+    @PostMapping("/updatestudent/{id}")
+    public String updateStudent(@PathVariable int id, @Valid Student student,  BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "updatestudent";
+        }
+
+        repository.save(student);
+        return "redirect:/addstudent";
     }
 
-    @GetMapping("/students/{id}")
-    public ResponseEntity<Student> findStudentById(@PathVariable int id) {
-        return new ResponseEntity<>(studentService.findById(id), HttpStatus.OK);
-    }
+    @GetMapping("/deletestudent/{id}")
+    public String deleteStudent(@PathVariable int id){
+        Student student = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student : " + id));
+        repository.delete(student);
 
-    @PutMapping("/students")
-    public Student updateStudent(@RequestBody Student students) {
-        return studentService.update(students);
-    }
-
-    @DeleteMapping("/students/{id}")
-    public String deleteStudentById(@PathVariable int id) {
-        studentService.deleteById(id);
-        return "Student Deleted";
+        return "redirect:/addstudent";
     }
 
 }

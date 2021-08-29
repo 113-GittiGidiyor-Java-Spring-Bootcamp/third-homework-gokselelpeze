@@ -1,49 +1,56 @@
 package goksel.elpeze.h2db.controller;
 
 import goksel.elpeze.h2db.entity.Instructor;
-import goksel.elpeze.h2db.services.InstructorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import goksel.elpeze.h2db.repository.InstructorRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
-@RestController
-@RequestMapping("/api")
+
+@Controller
+@RequiredArgsConstructor
 public class InstructorController {
 
-    InstructorService instructorService;
+    private final InstructorRepository repository;
 
-    @Autowired
-    public InstructorController(InstructorService instructorService) {
-        this.instructorService = instructorService;
+
+    @PostMapping("/addinstructor")
+    public String addUser(@Valid Instructor instructor, BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "addinstructor";
+        }
+
+        repository.save(instructor);
+        return "redirect:/addinstructor";
     }
 
-    @GetMapping("/instructors")
-    public ResponseEntity<List<Instructor>> findAll() {
-        return new ResponseEntity<>(instructorService.findAll(), HttpStatus.OK);
+    @GetMapping("/editinstructor/{id}")
+    public String showUpdatePage(@PathVariable int id, Model theModel){
+        Instructor instructor = repository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid instructor id: " + id));
+        theModel.addAttribute("instructor",instructor);
+        return "updateinstructor";
     }
 
-    @PostMapping("/instructors")
-    public Instructor saveInstructor(@RequestBody Instructor instructors) {
-        return instructorService.save(instructors);
+    @PostMapping("/updateinstructor/{id}")
+    public String updateInstructor(@PathVariable int id, @Valid Instructor instructor,  BindingResult result, Model theModel){
+        if(result.hasErrors()){
+            return "updateinstructor";
+        }
+
+        repository.save(instructor);
+        return "redirect:/addinstructor";
     }
 
-    @GetMapping("/instructors/{id}")
-    public ResponseEntity<Instructor> findInstructorById(@PathVariable int id) {
-        return new ResponseEntity<>(instructorService.findById(id), HttpStatus.OK);
-    }
+    @GetMapping("/deleteinstructor/{id}")
+    public String deleteInstructor(@PathVariable int id){
+        Instructor instructor = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid instructor : " + id));
+        repository.delete(instructor);
 
-    @PutMapping("/instructors")
-    public Instructor updateInstructor(@RequestBody Instructor instructors) {
-        return instructorService.update(instructors);
-    }
-
-    @DeleteMapping("/instructors/{id}")
-    public String deleteInstructorById(@PathVariable int id) {
-        instructorService.deleteById(id);
-        return "Instructor Deleted";
+        return "redirect:/addinstructor";
     }
 
 }
