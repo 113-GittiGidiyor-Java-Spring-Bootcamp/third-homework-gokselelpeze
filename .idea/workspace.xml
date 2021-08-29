@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188ec95f-2362-4fa9-8b0a-5d244bc4cc83" name="Changes" comment="old project added">
-      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/config/SpringFoxConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/repository/CourseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/repository/InstructorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/repository/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/util/InitializerRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="188ec95f-2362-4fa9-8b0a-5d244bc4cc83" name="Changes" comment="add student and others">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/CourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/InstructorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/InstructorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/BaseDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/CourseDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/InstructorDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/dao/StudentDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/PermanentInstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/PermanentInstructor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/InstructorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/InstructorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2db/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/VisitingResearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/entity/VisitingResearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/util/InitializerRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/h2db/src/main/java/goksel/elpeze/h2db/util/InitializerRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +105,7 @@
       <workItem from="1630176082148" duration="1865000" />
       <workItem from="1630223488698" duration="919000" />
       <workItem from="1630248682132" duration="9475000" />
-      <workItem from="1630262521535" duration="624000" />
+      <workItem from="1630262521535" duration="3496000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1630178399946</created>
@@ -139,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630249662507</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add student and others">
+      <created>1630263276924</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630263276924</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +156,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project initialized" />
     <MESSAGE value="old project added" />
-    <option name="LAST_COMMIT_MESSAGE" value="old project added" />
+    <MESSAGE value="add student and others" />
+    <option name="LAST_COMMIT_MESSAGE" value="add student and others" />
   </component>
 </project>
